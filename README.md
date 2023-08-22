@@ -13,7 +13,7 @@ There are many factors that go into the final result of a marathon such as train
 
 ### Problem Statement 
 
-Why would you want to predict a race time? Well, large companies such as Nike and Adidas spend a lot of money in the sponsorship of athletes.  An algorithm that could predict a race time of a runner could aid one of these companies in selecting the ideal athlete that would maximize the exposure of their product since the larger races are aired live and tend to focus camera time on the top runners of the race.  
+Why would you want to predict a race time? Well, large companies such as Nike and Adidas spend a lot of money on the sponsorship of athletes.  An algorithm that could predict a runner's race time could aid one of these companies in selecting the ideal athlete that would maximize the exposure of their product since the larger races are aired live and tend to focus camera time on the race's top runners.  
 
 Often the finishers finish within seconds of each other, so predicting race times with such precision will be a challenge.  I decided to attack this problem using 4 years (2015-2018) of Boston Marathon finishing times.   The data is narrowed down to "legacy runners" (repeat runners) and fed into various models using linear regression and stochastic gradient descent.  Metrics of $R^2$ and $RMSE​$ (Root Mean Squared Error) are used to measure the results.  
 
