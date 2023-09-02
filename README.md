@@ -18,22 +18,6 @@ Why would you want to predict a race time? Well, large companies such as Nike an
 Often the finishers finish within seconds of each other, so predicting race times with such precision will be a challenge.  I decided to attack this problem using 4 years (2015-2018) of Boston Marathon finishing times.   The data is narrowed down to "legacy runners" (repeat runners) and fed into various models using linear regression and stochastic gradient descent.  Metrics of $R^2$ and $RMSE​$ (Root Mean Squared Error) are used to measure the results.  
 
 
-
-### Tools
-
-Below is a list of the libraries, sites, and tools that aided in the completion of this project. 
-
-| **Websites**                                                 | Tools            | **Libraries for Analysis/Modeling** | **Custom functions scripts** |
-| ------------------------------------------------------------ | ---------------- | ----------------------------------- | ---------------------------- |
-| [Boston Marathon 2018 Finishers](http://registration.baa.org/2018/cf/Public/iframe_ResultsSearch.cfm?mode=entry) | Python           | numpy                               | visualize.py                 |
-| [Kaggle](https://www.kaggle.com/rojour/boston-results)       | Jupiter Notebook | pandas                              | modeling.py                  |
-| [Weather Underground](https://www.wunderground.com/history/) | PyCharm          | matplotlib                          |                              |
-|                                                              | GitHub           | seaborn                             |                              |
-|                                                              |                  | xgboost                             |                              |
-|                                                              |                  | catboost                            |                              |
-
-
-
 ### Data Preprocessing
 
 Initially there were 4 data sets, one for each year of 2015-2018, with approximately 25k runners per year or 100k runners in total.  The following features were given in each set:
