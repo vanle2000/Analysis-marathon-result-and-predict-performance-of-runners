@@ -1,26 +1,49 @@
-## Predicting Boston Marathon Finishing Times
+## Marathon Data Analysis and Predicting Marathon Finish Times Project
 
 
+## Overview
 
+Welcome to the Marathon Data Analysis project! This project involves the analysis of race results from approximately 26,000 marathon runners. As there are many factors that go into the final result of a marathon such as training rigor and nutrition, but if we held these things constant, as a serious athlete would, could a race time be predicted based on prior year results? 
+The primary goal is to utilize statistical and machine learning techniques to gain insights from the data and make predictions related to runner demographics and performance. Metrics of $R^2$ and $RMSE​$ (Root Mean Squared Error) are used to measure the results.  
 
-### Project Overview
+## Objectives
 
-Road running, as of 2015, is a $1.4 billion industry.  Many people run for various reasons such as physical/mental health improvements and many runners enjoy the challenge of completing a race in some goal time they have set for themselves.  In particular, elite runners make a livelihood from performing well at big races such as the Boston Marathon.  
+The project is structured around several key objectives:
 
-There are many factors that go into the final result of a marathon such as training rigor and nutrition, but if we held these things constant, as a serious athlete would, could a race time be predicted based on prior year results? 
+1. **Gender Prediction using Kernel Density Estimation (KDE):**
+   - Calculate 1-dimensional KDEs for male and female runners based on their finish times.
+   - Utilize Bayes theorem to predict the gender of runners given their finish times.
+   - Evaluate the accuracy of these gender predictions.
 
+2. **Age and Finish Time Prediction using 2-D KDEs:**
+   - Create 2-dimensional KDEs using finish times and ages of runners.
+   - Apply the same Bayesian approach to predict gender and assess prediction accuracy.
 
+3. **Gender Prediction using k-Nearest Neighbors (k-NN):**
+   - Implement k-NN classification with input data of finish times and ages.
+   - Compare the accuracy of gender predictions with KDE-based predictions.
 
-### Problem Statement 
+4. **Finish Time Prediction using Linear Regression:**
+   - Employ linear regression to predict finish times based solely on 5K times.
+   - Evaluate the accuracy of finish time predictions.
 
-Why would you want to predict a race time? Well, large companies such as Nike and Adidas spend a lot of money on the sponsorship of athletes.  An algorithm that could predict a runner's race time could aid one of these companies in selecting the ideal athlete that would maximize the exposure of their product since the larger races are aired live and tend to focus camera time on the race's top runners.  
+5. **Multi-Feature Finish Time Prediction:**
+   - Extend the linear regression model to include age and gender as additional features.
+   - Evaluate whether this improves finish time predictions compared to the 5K time-based model.
 
-Often the finishers finish within seconds of each other, so predicting race times with such precision will be a challenge.  I decided to attack this problem using 4 years (2015-2018) of Boston Marathon finishing times.   The data is narrowed down to "legacy runners" (repeat runners) and fed into various models using linear regression and stochastic gradient descent.  Metrics of $R^2$ and $RMSE​$ (Root Mean Squared Error) are used to measure the results.  
+6. **Exploratory Analysis and Insights:**
+   - Perform exploratory data analysis to uncover trends and patterns in the marathon data.
+   - Identify relevant factors influencing marathon performance and demographics for future work.
 
+## Tools and Libraries
+
+- Python for data preprocessing, visualization, and analysis.
+- SciPy library for Kernel Density Estimation.
+- Scikit-learn library for k-Nearest Neighbors and Linear Regression.
 
 ### Data Preprocessing
 
-Initially there were 4 data sets, one for each year of 2015-2018, with approximately 25k runners per year or 100k runners in total.  The following features were given in each set:
+With 26K runners, the following features were given in each set:
 
 *  *Bib* - race number determined by the qualifying race time
 * *Name* - the name of each runner
@@ -51,8 +74,6 @@ Lastly, historical weather data (*temperature, humidity, wind_speed*) from Weath
 
 The final dataset was brought down to only the legacy runners (runners who ran consecutive years) approximately 13k, and the current year finish time was replaced with the consecutive year finish time as the dependant variable and *'Bib', 'Age', 'overall_rank', 'gender_rank', 'division_rank', 'pace_rate', 'temp', 'humidity', 'wind', 'Gender_F', 'Gender_M'* as the independant variables.  
 
-
-
 ### Data Exploration and Visulization
 
 The graph below displays the spread of finish times over the given bib numbers.  It makes sense that there is a linear relationship between the bib number and the finish time since the bib number is assigned based on the qualifying time from some other previous qualifying race.  The breaks in the bib numbers, which is obvious on the graphs are indicative of the waves that go out at different start times.  This is not unusual at large races for safty reasons.  
@@ -69,8 +90,7 @@ The graph below displays the distribution of finish times of male versus female.
 ![download](https://user-images.githubusercontent.com/20651507/51808779-14e6b180-224d-11e9-8893-289130b6fa92.png)
 
 
-
-### Algorithms and Techniques
+## Algorithms and Techniques
 
 The algorithms that were most used were **Linear Regression** and **Stochastic Gradient Descent**.  
 
@@ -78,12 +98,13 @@ A pipeline was built that took in the features and data and split the data into 
 
 As a benchmark, I first ran a simple linear regression model using all of the independant variables and recorded the results.  The goal was to improve the results by reducing the $RMSE$ value and increasing the $R^2​$ value with subsequent models.  Those subsequent models inolved cross validation using KFolds and Stochastic Gradient Descent with various combinations of regularization (LASSO and RIDGE), tuning of hyper-parameters, and omitting various independant variables. 
 
+## Results and Impact
 
+This project showcases proficiency in quantitative analysis, statistical techniques, and machine learning. The outcomes include gender and finish time predictions and valuable insights for event planning and marketing.
 
-### Results
+## Results
 
 In the process of viewing the results of each model a few things are worth pointing out in the graphs below.  The 2 graphs are representative of learning curves one which converges the other does not. Both graphs are for SGD and it is interesting to see the behavior when it behaves badly.  After scaling the data by using the ```StandardScaler()``` function in ```sklearn``` the learning curve behaved better and it convereged. 
-
 
 
 ![download-6](https://user-images.githubusercontent.com/20651507/51808747-c46f5400-224c-11e9-9375-a8e6818abea7.png)
@@ -102,24 +123,13 @@ Below is a table of the results of each model:
 
 
 
-
 Below is the results of Linear Regression actual Vs. predicted values.  Notice how most of the points fall within one standard deviation (red dashed lines) of the regression line (in blue). 
 
 ![download-7](https://user-images.githubusercontent.com/20651507/51809371-25028f00-2255-11e9-9a80-e68fc7e96800.png)
 
+## Usage
 
+1. Download the `marathon_results.csv` dataset.
+2. Run the project scripts to perform the analyses and predictions as outlined in the objectives.
+3. Explore the project's visualizations and findings to draw insights from the data.
 
-
-### Conclusions
-
-**Given more time...**
-
-If there were more time, exploring other avenues of the dataset would be interesting.  These are things I think of in hindsight reflecting back...
-
-* Focus the dataset on only the elite runners to see what kind of predictive power that gets. 
-* Train the model separately on male versus female. 
-* Remove the charity runners since their data is less linear and more "noisy" compared to the qualified runners. 
-* Add more data fields such as the elevation and population of the city a person is from. 
-* Add interactive terms between gender and ranks. 
-* Take the time to explore and remove possible outliers seen in residual plots. 
-* Add more years to the dataset going back to 2000. 
