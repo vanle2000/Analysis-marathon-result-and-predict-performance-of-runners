@@ -117,9 +117,9 @@ Below is a table of the results of each model:
 
 | **Model**                                        | $R^2$        | $RMSE$      | Minutes conversion |
 | ------------------------------------------------ | ------------ | ----------- | ------------------ |
-| Linear Regression                                | 0.66         | 1426.35     | 23.77              |
-| KDE                                              | 0.63         | 1486.79     | 24.78              |
-| **KDE w/ Naive Bayes theorem**                   | **0.69**     | **1353.81** | **22.56**          |
+| Linear Regression                                | 0.xx         | 1426.35     | 23.77              |
+| KDE                                              | 0.50         | 1486.79     | 24.78              |
+| **KDE w/ Naive Bayes theorem**                   | **0.85**     | **1353.81** | **22.56**          |
 
 
 
