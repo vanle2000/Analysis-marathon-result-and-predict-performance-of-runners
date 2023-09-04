@@ -115,11 +115,11 @@ In the process of viewing the results of each model a few things are worth point
 
 Below is a table of the results of each model:
 
-| **Model**                                        | $R^2$        | $RMSE$      | Minutes conversion |
-| ------------------------------------------------ | ------------ | ----------- | ------------------ |
-| Linear Regression                                | 0.xx         | 1426.35     | 23.77              |
-| KDE                                              | 0.50         | 1486.79     | 24.78              |
-| **KDE w/ Naive Bayes theorem**                   | **0.85**     | **1353.81** | **22.56**          |
+| **Model**                                        | $R^2$        | $RMSE$      |
+| ------------------------------------------------ | ------------ | ----------- | 
+| KNN                                              | 0.76         | 1426.35     | 
+| 1-D KDE w/ Naive Bayes theorem                   | 0.657        | 1486.79     | 
+| **2-D KDE w/ Naive Bayes theorem**               | **0.77**     | **1353.81** | 
 
 
 
