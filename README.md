@@ -10,30 +10,30 @@ The primary goal is to utilize statistical and machine learning techniques to ga
 
 The project is structured around several key objectives:
 
-1. **Gender Prediction using Kernel Density Estimation (KDE):**
+1. **Exploratory Analysis and Insights:**
+   - Perform exploratory data analysis to uncover trends and patterns in the marathon data.
+   - Identify relevant factors influencing marathon performance and demographics for future work.
+
+2. **Gender Prediction using Kernel Density Estimation (KDE):**
    - Calculate 1-dimensional KDEs for male and female runners based on their finish times.
    - Utilize Bayes theorem to predict the gender of runners given their finish times.
    - Evaluate the accuracy of these gender predictions.
 
-2. **Age and Finish Time Prediction using 2-D KDEs:**
+3. **Age and Finish Time Prediction using 2-D KDEs:**
    - Create 2-dimensional KDEs using finish times and ages of runners.
    - Apply the same Bayesian approach to predict gender and assess prediction accuracy.
 
-3. **Gender Prediction using k-Nearest Neighbors (k-NN):**
+4. **Gender Prediction using k-Nearest Neighbors (k-NN):**
    - Implement k-NN classification with input data of finish times and ages.
    - Compare the accuracy of gender predictions with KDE-based predictions.
 
-4. **Finish Time Prediction using Linear Regression:**
+5. **Finish Time Prediction using Linear Regression:**
    - Employ linear regression to predict finish times based solely on 5K times.
    - Evaluate the accuracy of finish time predictions.
 
-5. **Multi-Feature Finish Time Prediction:**
+6. **Multi-Feature Finish Time Prediction:**
    - Extend the linear regression model to include age and gender as additional features.
    - Evaluate whether this improves finish time predictions compared to the 5K time-based model.
-
-6. **Exploratory Analysis and Insights:**
-   - Perform exploratory data analysis to uncover trends and patterns in the marathon data.
-   - Identify relevant factors influencing marathon performance and demographics for future work.
 
 ## Tools and Libraries
 
